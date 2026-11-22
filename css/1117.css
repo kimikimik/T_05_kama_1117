@@ -1,0 +1,253 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    color: #51463c;
+    background: #f3eee6;
+    font: 16px/1.45 "Yu Gothic", "Meiryo", sans-serif;
+}
+
+.notebook {
+    position: relative;
+    width: min(100%, 766px);
+    aspect-ratio: 0.764;
+    margin: 12px auto;
+    background: url("../img/note.png") center / 100% 100% no-repeat;
+}
+
+header {
+    position: absolute;
+    top: 8.5%;
+    left: 28%;
+    width: 44%;
+    padding: 0;
+    background: transparent;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    color: #765b4c;
+    font-size: clamp(18px, 3.2vw, 28px);
+    letter-spacing: 0.08em;
+}
+
+main {
+    position: absolute;
+    top: 12%;
+    left: 28%;
+    width: 44%;
+    max-width: none;
+    margin: 0;
+    padding: 10px 14px;
+    background: transparent;
+}
+
+#key,
+textarea {
+    display: block;
+    width: 100%;
+    margin: 0 0 8px;
+    padding: 9px 11px;
+    color: #51463c;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid rgba(148, 121, 94, 0.65);
+    border-radius: 0;
+    font: inherit;
+}
+
+#key {
+    min-height: 40px;
+}
+
+textarea {
+    margin-top: 0;
+    padding-top: 17px;
+    height: 54px;
+    min-height: 54px;
+    resize: none;
+}
+
+#key::placeholder,
+textarea::placeholder {
+    color: #958577;
+}
+
+#key:focus,
+textarea:focus {
+    outline: none;
+    border-bottom: 2px solid #ad786e;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    width: 100%;
+    margin: 18px 0 0;
+    padding: 0;
+    text-align: center;
+}
+
+li {
+    display: block;
+    width: 100%;
+    padding: 8px 10px;
+    color: #66554b;
+    background: #e8ddd2;
+    border: 1px solid #d7c7b9;
+    border-radius: 7px;
+    list-style: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#save {
+    color: #674943;
+    background: #e6c1bd;
+    border-color: #d7b0aa;
+}
+
+li:hover {
+    background: #ded0c4;
+}
+
+#save:hover {
+    background: #dab0aa;
+}
+
+#list {
+    position: absolute;
+    top: 43%;
+    left: 28.5%;
+    display: block;
+    width: 43%;
+    height: 50%;
+    margin: 0;
+    overflow-y: auto;
+    background: transparent;
+    border: 0;
+    border-spacing: 0;
+}
+
+#list tr {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    align-items: center;
+    border-bottom: 1px dashed rgba(139, 112, 88, 0.45);
+}
+
+th,
+td {
+    padding: 7px 6px;
+    text-align: left;
+}
+
+th {
+    min-width: 0;
+    color: #66503f;
+    background: transparent;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+td {
+    color: #51463c;
+    background: transparent;
+    font-size: 14px;
+}
+
+td:last-child {
+    text-align: center;
+}
+
+td button {
+    padding: 5px 8px;
+    color: #745a50;
+    background: rgba(250, 243, 236, 0.9);
+    border: 1px solid #ddc8bb;
+    border-radius: 6px;
+    font: inherit;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+td button:hover {
+    background: #efe2d8;
+}
+
+footer {
+    padding: 12px;
+    color: #8c796d;
+    text-align: center;
+    font-size: 13px;
+}
+
+@media (max-width: 520px) {
+    .notebook {
+        width: 100%;
+        min-height: 620px;
+        aspect-ratio: auto;
+    }
+
+    header {
+        top: 8%;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    main {
+        top: 12.5%;
+        padding: 5px;
+    }
+
+    #key,
+    textarea {
+        margin-bottom: 3px;
+        padding: 4px 6px;
+        font-size: 10px;
+    }
+
+    #key {
+        min-height: 28px;
+    }
+
+    textarea {
+        height: 28px;
+        min-height: 28px;
+        padding-top: 12px;
+        padding-bottom: 0;
+        resize: none;
+    }
+
+    ul {
+        gap: 4px;
+        margin-top: 12px;
+    }
+
+    li {
+        padding: 4px 3px;
+        font-size: 10px;
+    }
+
+    #list {
+        top: 43%;
+        height: 51%;
+    }
+
+    th,
+    td {
+        padding: 5px 3px;
+        font-size: 11px;
+    }
+
+    td button {
+        padding: 4px 5px;
+        font-size: 10px;
+    }
+}
